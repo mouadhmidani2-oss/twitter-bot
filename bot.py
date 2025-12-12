@@ -7,12 +7,11 @@ Original file is located at
     https://colab.research.google.com/drive/1i8kuCkMrgoOVBiI81hgsSj9A5h0Gwyps
 """
 
-<<<<<<< HEAD
 import os
 import time
-=======
 
->>>>>>> 342120564ac98a4662f027f9c4e3ab6511a3559c
+
+
 import tweepy
 
 # Load keys from environment variables
@@ -47,7 +46,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-=======
+
 client.create_tweet(text="Test")
 print("Tweet sent successfully!")
->>>>>>> 342120564ac98a4662f027f9c4e3ab6511a3559c
+
