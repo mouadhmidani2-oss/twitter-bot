@@ -7,11 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1i8kuCkMrgoOVBiI81hgsSj9A5h0Gwyps
 """
 
-API_KEY = "x0d6BCW7JC12NCCNJsgzb6OSn"
-API_SECRET = "HOUrFCo9zNQy9tQHp1gGXwxS1VgnM9rXkugL4eQBTmaFaimHi2"
-ACCESS_TOKEN = "1997977112809283584-6s78AlBBl4xzKpyWIVkE3pm7mJjbpT"
-ACCESS_SECRET = "YzvarwC2eY9mezO8pSP8ZslUUb51fpSkVKGzKM8Ck0HlM"
-BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAPuT5wEAAAAAohZ0gbc%2FVobtL8JqRTuAkFfP5Jo%3DeG968MUdTInYjr865K72wxTUw1jfbmTeECk1w5F1ltHO0u2UUc"
 
 import tweepy
 
