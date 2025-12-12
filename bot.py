@@ -7,21 +7,38 @@ Original file is located at
     https://colab.research.google.com/drive/1i8kuCkMrgoOVBiI81hgsSj9A5h0Gwyps
 """
 
-API_KEY = "x0d6BCW7JC12NCCNJsgzb6OSn"
-API_SECRET = "HOUrFCo9zNQy9tQHp1gGXwxS1VgnM9rXkugL4eQBTmaFaimHi2"
-ACCESS_TOKEN = "1997977112809283584-6s78AlBBl4xzKpyWIVkE3pm7mJjbpT"
-ACCESS_SECRET = "YzvarwC2eY9mezO8pSP8ZslUUb51fpSkVKGzKM8Ck0HlM"
-BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAPuT5wEAAAAAohZ0gbc%2FVobtL8JqRTuAkFfP5Jo%3DeG968MUdTInYjr865K72wxTUw1jfbmTeECk1w5F1ltHO0u2UUc"
-
+import os
+import time
 import tweepy
 
-client = tweepy.Client(
-    bearer_token=BEARER_TOKEN,
-    consumer_key=API_KEY,
-    consumer_secret=API_SECRET,
-    access_token=ACCESS_TOKEN,
-    access_token_secret=ACCESS_SECRET
-)
+# Load keys from environment variables
+BEARER_TOKEN = os.getenv("BEARER_TOKEN")
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+ACCESS_SECRET = os.getenv("ACCESS_SECRET")
 
-client.create_tweet(text="Test")
-print("Tweet sent successfully!")
+def main():
+    # Init client
+    client = tweepy.Client(
+        bearer_token=BEARER_TOKEN,
+        consumer_key=API_KEY,
+        consumer_secret=API_SECRET,
+        access_token=ACCESS_TOKEN,
+        access_token_secret=ACCESS_SECRET
+    )
+
+    # Test tweet (only once at startup)
+    try:
+        client.create_tweet(text="Bot started 🚀")
+        print("Tweet sent successfully!")
+    except Exception as e:
+        print("Error sending startup tweet:", e)
+
+    # Keep the bot alive forever
+    while True:
+        print("Bot running...")   # shows in Railway logs
+        time.sleep(30)            # wait 30 seconds
+
+if __name__ == "__main__":
+    main()
