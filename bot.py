@@ -21,7 +21,7 @@ API_SECRET = os.getenv("API_SECRET")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 ACCESS_SECRET = os.getenv("ACCESS_SECRET")
 
-<<<<<<< HEAD
+
 def main():
     # Init client
     client = tweepy.Client(
